@@ -1,3 +1,11 @@
-# GovList
+# Bid Aggregator
 
-Government bids and more
+Government Bid Aggregator and Information Listing
+
+To Start
+
+```
+npm install
+npm run dev
+```
+
