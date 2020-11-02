@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+:root {
+  --text-color: #212121;
+  --bg-color: #ededed;
+}
+
+[data-theme="dark"] {
+  --text-color: #ededed;
+  --bg-color: #212121;
+}
+
+[data-theme="dark"] .icon {
+  filter: invert(100%);
+  color: #212121;
+}
+
+[data-theme="sepia"] {
+  --text-color: #402b0c;
+  --bg-color: #eae0b9;
+}
+
+[data-theme="sepia"] .card {
+  border-color: var(--text-color);
+}
+
+[data-theme="sepia"] .text-gray-400 {
+  color: rgb(173, 142, 95);
+}
+
+[data-theme="sepia"] .text-gray-500 {
+  color: #896f47;
+}
+
+[data-theme="sepia"] .placeholder-gray-500::placeholder {
+  color: #896f47;
+}
+
+[data-theme="sepia"] .text-gray-600 {
+  color: #5e4828;
+}
+
+[data-theme="sepia"] .border-gray-300 {
+  border-color: #a8906b;
+}
+
+[data-theme="sepia"] .border-gray-600 {
+  border-color: #5e4828;
+}
+
+[data-theme="sepia"] .bg-gray-200 {
+  background-color: #d8c3a2;
+}
+
+.paper {
+  border-radius: 0px;
+  box-shadow: -5px 5px 34px #b3b3b3, 5px -5px 34px #ffffff;
+}
+
+[data-theme="dark"] .paper {
+  box-shadow: -6px 6px 15px #0d0d0d, 6px -6px 15px #353535;
+}
+
+[data-theme="sepia"] .paper {
+  box-shadow: -6px 6px 17px #665c44, 6px -6px 17px #ffe6ab;
+}
+
+.binder-back {
+  box-shadow: 10px 10px 13px #9a9a9a, -10px -10px 13px #ffffff;
+}
+
+[data-theme="dark"] .binder-back {
+  box-shadow: -6px 6px 15px #0d0d0d, 6px -6px 15px #353535;
+}
+
+[data-theme="sepia"] .binder-back {
+  box-shadow: -6px 6px 17px #665c44, 6px -6px 17px #ffe6ab;
+}
+
+[data-theme="dark"] .form-input {
+  background-color: #353535;
+}
+
+[data-theme="sepia"] .form-input {
+  background-color: #decba1;
+  border-color: #a8906b;
+}
+
+[data-theme="sepia"] .form-input::placeholder {
+  color: #896f47;
+}
+
+[data-theme="sepia"] .group:hover .group-hover\:text-gray-500 {
+  color: #896f47;
+}
+
+[data-theme="sepia"] .group:hover .group-hover\:text-gray-900 {
+  color: #402b0c;
+}
+
+[data-theme="dark"] .group:hover .group-hover\:text-gray-500 {
+  color: #ededed;
+}
+
+[data-theme="dark"] .group:hover .group-hover\:text-gray-900 {
+  color: #ededed;
+}
+
+[data-theme="sepia"] .hover\:text-gray-900:hover {
+  color: #402b0c;
+}
+
+.icon-dots-vertical {
+  color: var(--text-color);
+  fill: currentColor;
+}
+
+main {
+  @apply px-10;
+  text-align: center;
+  margin: 0 auto;
+  min-height: calc(100vh - 64px - (3rem + 23.6px)); /*Full screen height minus navbar height minus footer height*/
+}
+
+input,
+textarea {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+@screen sm {
+  main {
+    @apply px-16;
+  }
+}
+
+@screen lg {
+  main {
+    @apply px-48;
+  }
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(70, 170, 86);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+.disable-scrollbars::-webkit-scrollbar {
+  display: none;
+}
+
+.disable-scrollbars {
+scrollbar-width: none; /* Firefox */
+-ms-overflow-style: none;  /* IE 10+ */
+}
+
+.yellow-bookmark {
+  background: theme('colors.yellow.300');
+  box-shadow: 5px 5px 13px theme('colors.yellow.400'), -5px -5px 13px theme('colors.yellow.100');
+  @apply rounded-lg;
+}
+
+.red-bookmark {
+  background: theme('colors.red.300');
+  box-shadow: 5px 5px 13px theme('colors.red.400'), -5px -5px 13px theme('colors.red.100');
+  @apply rounded-lg;
+}
+
+.pink-bookmark {
+  background: theme('colors.pink.300');
+  box-shadow: 5px 5px 13px theme('colors.pink.400'), -5px -5px 13px theme('colors.pink.100');
+  @apply rounded-lg;
+}
+
+.green-bookmark {
+  background: theme('colors.green.300');
+  box-shadow: 5px 5px 13px theme('colors.green.400'), -5px -5px 13px theme('colors.green.100');
+  @apply rounded-lg;
+}
+
+.blue-bookmark {
+  background: theme('colors.blue.300');
+  box-shadow: 5px 5px 13px theme('colors.blue.400'), -5px -5px 13px theme('colors.blue.100');
+  @apply rounded-lg;
+}
+
+.teal-bookmark {
+  background: theme('colors.teal.300');
+  box-shadow: 5px 5px 13px theme('colors.teal.400'), -5px -5px 13px theme('colors.teal.100');
+  @apply rounded-lg;
+}
+
+.primary-gradient {
+  background: rgb(18, 199, 156);
+  background: linear-gradient(196deg, rgba(18, 199, 156, 1) 0%, rgba(120, 201, 141, 1) 54%, rgba(100, 193, 74, 1) 100%);
+}
+.primary-gradient-text {
+  background-color: blue;
+}
+
+.ProseMirror-focused {
+  @apply outline-none;
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+
+@font-face {
+  font-family: 'Hobo Std';
+  src: url('/fonts/HoboStd.woff2') format('woff2'),
+      url('/fonts/HoboStd.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind utilities;
+@tailwind ui;
